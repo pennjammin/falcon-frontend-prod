@@ -79,6 +79,7 @@ class Index extends Component {
                 <div>{section_six.headline}</div>
                 <div>{section_six.sub_headline}</div>
                 <div>{imageRepeaterTwo}</div>
+                <a href={section_six.button.button_link}>{section_six.button.button_text}</a>
             </Layout>
         );
     }
