@@ -21,29 +21,10 @@ class Index extends Component {
     }
 
     render() {
-        const repeater = this.props.page.acf.test.map((test, index) => {
-            return (
-                <ul key={index}>
-                    <li>
-                        {test.tester}
-                    </li>
-                </ul>
-            );
-        });
         return (
             <Layout>
                 <Menu menu={this.props.headerMenu} />
                 <h1>{this.props.page.title.rendered}</h1>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: this.props.page.content.rendered
-                    }}
-                />
-                {repeater}
-                <h2>Posts</h2>
-                {posts}
-                <h2>Pages</h2>
-                {pages}
             </Layout>
         );
     }
