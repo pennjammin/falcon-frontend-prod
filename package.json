@@ -21,7 +21,8 @@
         "express": "^4.16.2",
         "isomorphic-unfetch": "^2.0.0",
         "next": "latest",
-        "react": "^16.0.0"
+        "react": "^16.0.0",
+        "react-svg": "^4.1.8"
     },
     "devDependencies": {
         "autoprefixer": "7.1.5",

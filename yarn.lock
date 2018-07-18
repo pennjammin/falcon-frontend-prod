@@ -51,6 +51,10 @@
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.6.0.tgz#383f456b26bc96c7889f0332079f4358b16c58dc"
 
+"@tanem/svg-injector@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@tanem/svg-injector/-/svg-injector-1.2.1.tgz#3120e90246d0eb3c4fc6c61586a6f028a3c658ae"
+
 JSONStream@^1.0.4:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.2.tgz#c102371b6ec3a7cf3b847ca00c20bb0fce4c6dea"
@@ -4290,6 +4294,12 @@ react-proxy@^3.0.0-alpha.0:
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
   dependencies:
     lodash "^4.6.1"
+
+react-svg@^4.1.8:
+  version "4.1.8"
+  resolved "https://registry.yarnpkg.com/react-svg/-/react-svg-4.1.8.tgz#7b870c9587661ec17b6ef8c1a324540123133f77"
+  dependencies:
+    "@tanem/svg-injector" "^1.2.1"
 
 react@^16.0.0:
   version "16.2.0"
