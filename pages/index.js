@@ -6,10 +6,6 @@ import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 
-const headerImageStyle = {
-    marginTop: 50,
-    marginBottom: 50
-};
 
 class Index extends Component {
     static async getInitialProps(context) {
@@ -21,6 +17,7 @@ class Index extends Component {
     }
 
     render() {
+        
         const { 
             hero_section,
             section_one,
@@ -54,8 +51,24 @@ class Index extends Component {
          
         return (
             <Layout>
+                <video autoPlay loop id="heroVideo">
+                    <source 
+                            src={hero_section.hero_video_background} 
+                            type="video/mp4" 
+                    />
+                </video>
+                <div className="home-hero flex column">
+                    <div
+                    dangerouslySetInnerHTML={{
+                        __html: hero_section.hero_headline
+                    }}
+                    />
+                    <div className="flex">
+                    <Link href="#"><a className="homeButton flex"><h3>Learn More</h3></a></Link>
+                    <Link href="#"><a className="homeButton flex"><h3>Free Evaluation</h3></a></Link>
+                    </div>
+                </div>
                 <Menu menu={this.props.headerMenu} />
-                <h1>{hero_section.hero_headline}</h1>
                 <div>{imageRepeaterOne}</div>
                 <div>{section_two.digital_marketing.dm_headline}</div>
                 <div>{section_two.digital_marketing.dm_paragraph}</div>
@@ -81,6 +94,7 @@ class Index extends Component {
                 <div>{imageRepeaterTwo}</div>
                 <a href={section_six.button.button_link}>{section_six.button.button_text}</a>
             </Layout>
+            
         );
     }
 }
