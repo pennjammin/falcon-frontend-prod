@@ -21,7 +21,7 @@ class Page extends Component {
 
         if (!this.props.page.title){
             return(
-                <Error statusCode="404" />
+                <Error statusCode={404} />
             )
 
         };
