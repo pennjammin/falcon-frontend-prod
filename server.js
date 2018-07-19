@@ -10,8 +10,8 @@ app
     .then(() => {
         const server = express();
 
-        server.get("/post/:slug", (req, res) => {
-            const actualPage = "/post";
+        server.get("/blog/:slug", (req, res) => {
+            const actualPage = "/blog";
             const queryParams = { slug: req.params.slug, apiRoute: "post" };
             app.render(req, res, actualPage, queryParams);
         });

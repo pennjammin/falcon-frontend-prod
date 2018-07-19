@@ -6,6 +6,7 @@ const hrStyle = {
 
 const Footer = () => (
     <div>
+        
     </div>
 );
 
