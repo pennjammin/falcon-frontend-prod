@@ -61,7 +61,6 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  color: #f1f1f1;
   width: 100vw;
   height: 100vh;
   left: 0;
@@ -72,9 +71,8 @@ body {
   h1 {
     text-align: center;
     font-size: 80px;
-    text-shadow: 1px 1px 10px rgba(0,0,0,0.8);
     z-index: 9999;
-    color: rgb(255,255,255);
+    color: #223c74;
   }
 
   .homeButton {
@@ -113,7 +111,7 @@ body {
 }
 
 .partnerSection {
-  padding: 80px;
+  padding: 20px;
   justify-content: space-around;
   align-items: center;
   ul {
