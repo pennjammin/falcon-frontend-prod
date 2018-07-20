@@ -43,9 +43,10 @@ class Blog extends Component {
                 <Layout>
                     <Menu menu={this.props.headerMenu} />
                     <div>
-                    <h1>Posts</h1>
-                    <ul>{posts}</ul>
+                        <h1>Posts</h1>
+                        <ul>{posts}</ul>
                     </div>
+                    <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpcl" frameborder="0"></iframe>
                 </Layout>
             )
         };
