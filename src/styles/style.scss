@@ -80,7 +80,6 @@ body {
     color: rgb(255, 255, 255);
     border-radius: 8px;
     border-width: 3px;
-    justify-content: space-around;
     align-items: center;
     margin: 10px;
     font-size: 18px;
@@ -91,6 +90,9 @@ body {
       text-align: center;
       font-weight: 400;
       margin: 0;
+    }
+    img {
+      padding-right: 10px;
     }
   }
 }
