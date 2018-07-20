@@ -5,8 +5,6 @@ import Link from "next/link";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
-import ReactDOM from 'react-dom'
-
 
 class Index extends Component {
     static async getInitialProps(context) {
@@ -17,8 +15,9 @@ class Index extends Component {
         return { page };
     }
 
-    scroll() {
-        console.log("Scrollin dirty")
+    componentDidMount() {
+        const menuChange = document.getElementById('homeNav');
+        menuChange.classList.add('absolute');
     }
 
     render() {
@@ -58,7 +57,7 @@ class Index extends Component {
          
         return (
             <Layout>
-                <video  autoPlay loop id="heroVideo">
+                <video  autoPlay muted loop id="heroVideo">
                     <source 
                             src={hero_section.hero_video_background}
                             type="video/mp4" 

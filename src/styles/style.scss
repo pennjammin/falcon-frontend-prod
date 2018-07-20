@@ -29,10 +29,13 @@ body {
   padding-right: 40px;
 }
 
-.mainNav {
+.absolute {
   position: absolute;
   left: 0;
   right: 0;
+}
+
+.mainNav {
   width: 100vw;
   justify-content: center;
   align-items: center;

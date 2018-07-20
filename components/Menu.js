@@ -40,7 +40,7 @@ class Menu extends Component {
 
 
     return(
-      <div className="mainNav flex">
+      <div id="homeNav" className="mainNav flex">
         <Link href="/">
             <a><img 
                 src="/static/images/logo.png"
