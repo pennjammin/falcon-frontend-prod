@@ -26,16 +26,15 @@ class Blog extends Component {
     render() {
         const posts = this.props.posts.map((post, index) => {
             return (
-                <ul key={index}>
                     <li>
-                        <Link
-                            as={`/blog/${post.slug}`}
-                            href={`/blog?slug=${post.slug}&apiRoute=post`}
-                        >
-                            <a>{post.title.rendered}</a>
-                        </Link>
+                        <h2>{post.title.rendered}</h2>
+                        <div>{post.featued_media}</div>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: post.excerpt.rendered
+                        }}
+                />
                     </li>
-                </ul>
             );
             });
 
@@ -45,7 +44,7 @@ class Blog extends Component {
                     <Menu menu={this.props.headerMenu} />
                     <div>
                     <h1>Posts</h1>
-                    {posts}
+                    <ul>{posts}</ul>
                     </div>
                 </Layout>
             )
