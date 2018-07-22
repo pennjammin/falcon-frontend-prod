@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import { Config } from "../config.js";
+import Intercom from 'react-intercom';
+
 
 const linkStyle = {
     marginRight: 15
@@ -49,6 +51,7 @@ class Menu extends Component {
             /></a>
         </Link> 
         {menuItems}
+        <Intercom appID="vmn0i5pf"/>
       </div>
     )
   }

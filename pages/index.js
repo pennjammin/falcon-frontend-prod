@@ -7,6 +7,7 @@ import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 
 class Index extends Component {
+
     static async getInitialProps(context) {
         const pageRes = await fetch(
             `${Config.apiUrl}/wp-json/postlight/v1/page?slug=welcome`
@@ -21,7 +22,7 @@ class Index extends Component {
     }
 
     render() {
-        
+
         const { 
             hero_section,
             section_one,
@@ -109,7 +110,6 @@ class Index extends Component {
                 <div>{imageRepeaterTwo}</div>
                 <a href={section_six.button.button_link}>{section_six.button.button_text}</a>
             </Layout>
-            
         );
     }
 }
