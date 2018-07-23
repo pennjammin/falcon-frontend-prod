@@ -23,7 +23,7 @@ class Header extends Component {
                     />
                     <meta charSet="utf-8" />
                     <title>
-                        WordPress + React Starter Kit Frontend by Postlight
+                        1SEO Digital Agency
                     </title>
                 </Head>
                 <Intercom appID="vmn0i5pf"/>

@@ -88,8 +88,21 @@ body {
   font-size: 24px;
 }
 
+iframe {
+  overflow: hidden!important;
+  height: 500px;
+}
+
 .none {
   display: none;
+}
+
+.padTop {
+  padding-top: 150px;
+}
+
+.sidePadTop {
+  padding-top: 5%;
 }
 
 .contactButton {
@@ -100,9 +113,13 @@ body {
   right: 20%;
   text-decoration: none;
   color: #fff;
-  background-color: #223c74;
+  background-color: #c4272f;
   padding: 10px;
   border-radius: 5px;
+}
+
+.black {
+  background: #232b2c;
 }
 
 .oneSeoGradient {
@@ -239,10 +256,7 @@ body {
 .homeButton:hover {
   background-color: rgba(190, 15, 15, 0.6)!important;
 }
-#downButton:hover {
-  animation-name: bounce;
-  animation-duration: 6s;
-}
+
 .bouncer {
   animation-name: bounce;
   animation-duration: 4s;

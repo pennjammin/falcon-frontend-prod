@@ -29,30 +29,25 @@ class Page extends Component {
             );
         };
 
-        if (title.rendered = 'Contact Us'){
-            return(
-            <Layout>
-                <Menu menu={this.props.headerMenu} />
-                <h1>{title.rendered}</h1>
-                <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpcl" frameborder="0"></iframe>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: content.rendered
-                    }}
-                />
-            </Layout>
-            );
-        };
-
         return (
             <Layout>
                 <Menu menu={this.props.headerMenu} />
-                <h1>{title.rendered}</h1>
-                <div
-                    dangerouslySetInnerHTML={{
-                        __html: content.rendered
-                    }}
-                />
+                <div className="padTop">
+                    <div className=" flex wrapper oneSeoGradient">
+                        <div className="flex flexThree column">
+                            <h1 className="white">{title.rendered}</h1>
+                            <div
+                            className="white"
+                            dangerouslySetInnerHTML={{
+                                __html: content.rendered
+                            }}
+                            />
+                        </div>
+                        <div className="flex flexOne column sidePadTop">
+                            <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpw8" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
             </Layout>
         );
     }
