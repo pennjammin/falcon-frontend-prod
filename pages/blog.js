@@ -25,7 +25,24 @@ class Blog extends Component {
         return { post, posts };
     }
 
+    static async pageSpeed() {}
+
+
     render() {
+
+        const options = {
+            url: 'https://1seo.com/',
+            key: 'AIzaSyDyGJ1dO416qwSM_mQ3_5bBvVfQxtACqR8'
+            }
+            
+            pagespeed(options)
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+
         const posts = this.props.posts.map((post, index) => {
             return (
                 <ul key={index}>
