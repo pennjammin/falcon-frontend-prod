@@ -28,6 +28,7 @@ class Blog extends Component {
     render() {
         const posts = this.props.posts.map((post, index) => {
             return (
+                <ul key={index}>
                     <li>
                         <h2>{post.title.rendered}</h2>
                         <div>{post.featued_media}</div>
@@ -37,6 +38,7 @@ class Blog extends Component {
                         }}
                 />
                     </li>
+                </ul>
             );
             });
 
@@ -45,8 +47,13 @@ class Blog extends Component {
                 <Layout>
                     <Menu menu={this.props.headerMenu} />
                     <div>
+<<<<<<< HEAD
                         <h1>Posts</h1>
                         <ul>{posts}</ul>
+=======
+                    <h1>Posts</h1>
+                    {posts}
+>>>>>>> remotes/origin/index-component
                     </div>
                     {/* <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpcl" frameborder="0"></iframe> */}
                     <Subscribe></Subscribe>

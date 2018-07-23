@@ -45,10 +45,16 @@ class Menu extends Component {
             <a><img 
                 src="/static/images/logo.png"
                 width="150px"
+                id="logo"
                 className="logo"
             /></a>
         </Link> 
         {menuItems}
+        <Link
+            style={linkStyle}
+            href="/blog">
+            <a>Blog</a>
+        </Link> 
       </div>
     )
   }

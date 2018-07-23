@@ -29,10 +29,36 @@ body {
   padding-right: 40px;
 }
 
+.miniLogo {
+  width: 75px!important;
+  padding: 5px 40px 5px 0;
+}
+
 .absolute {
   position: absolute;
   left: 0;
   right: 0;
+}
+
+.sticky {
+  position: fixed;
+  background-color: white;
+  top: 0!important;
+}
+
+.standardButton {
+  padding: 20px;
+  width: 300px;
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  margin: 10px;
+  background-color: #c4272f;
+}
+.standardButton:hover {
+  background-color: rgba(190, 15, 15, 0.8)!important;
 }
 
 .mainNav {
@@ -40,11 +66,12 @@ body {
   justify-content: center;
   align-items: center;
   top: 5%;
+  z-index: 9999;
 
   a {
     text-decoration: none;
     padding: 0 10px 0 10px;
-    color: rgb(190, 15, 15);
+    color: #c4272f;
     font-weight: 900;
     font-size: 16px;
     text-transform: uppercase;
@@ -77,7 +104,7 @@ body {
 
   .homeButton {
     text-decoration: none;
-    background: rgb(190, 15, 15);
+    background: #c4272f;
     color: rgb(255, 255, 255);
     border-radius: 8px;
     border-width: 3px;
@@ -96,11 +123,48 @@ body {
       padding-right: 10px;
     }
   }
+  .downButton {
+    margin-top: 50px;
+  }
+
 }
 
 .homeButton:hover {
   background-color: rgba(190, 15, 15, 0.6)!important;
 }
+#downButton:hover {
+  animation-name: bounce;
+  animation-duration: 6s;
+}
+.bouncer {
+  animation-name: bounce;
+  animation-duration: 4s;
+}
+
+@keyframes bounce {
+  0% {
+    transform:translateY(-30%);
+    
+  }
+  5% {
+      transform:translateY(-40%);
+      
+  }
+  15% {
+    transform:translateY(0);
+    padding-bottom: 5px;
+  }
+  30% {
+    transform:translateY(-50%);
+  }
+  40% {
+    transform:translateY(0%);
+    padding-bottom: 6px;
+  }
+  50% {
+  transform:translateY(-30%);
+  }
+  }
 
 #heroVideo {
   position: absolute;
@@ -124,27 +188,59 @@ body {
 }
 
 .sectionTwo {
-  background-image: linear-gradient(135deg,#313132,#304179);
   flex-direction: column;
+  height: 100vh;
+  width: 100vw;
   position: relative;
-  height: 600px;
+  text-align: right;
   h3 {
     font-size: 60px;
-    color: white;
     text-transform: capitalize;
-    margin: 0;
+    margin: 30px 0 0 0;
     font-weight: 700;
-    border-bottom: 10px solid rgb(190,15,15);
+  }
+  p {
+    font-size: 30px;
+  }
+  img {
+    flex-grow:0;
+    flex-shrink:0;
+  }
+}
+
+.twoBlue {
+  background-image: linear-gradient(bottom left,#242430,#223c74);
+  text-align: left;
+  h3 {
+    color: white;
     width: 600px;
   }
   p {
     color: white;
-    font-size: 30px;
     width: 90%;
   }
 }
 
+.divideLeft {
+  margin-right: auto!important;
+  height: auto!important;
+  width: 300px!important;
+}
 
+.divideRight {
+  margin-left: auto!important;
+  height: auto!important;
+  width: 300px!important;
+}
+
+.sectionThree {
+  align-items: center;
+  h3 {
+    font-size: 60px;
+    margin: 10px;
+    color: #223c74;
+  }
+}
 
 @media all and (max-width: 1000px) {
  .home-hero {
