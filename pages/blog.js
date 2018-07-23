@@ -32,7 +32,11 @@ class Blog extends Component {
             return (
                 <ul key={index}>
                     <li>
-                        <h2>{post.title.rendered}</h2>
+                        <Link
+                            as={`/blog/${post.slug}`}
+                            href={`/blog?slug=${post.slug}&apiRoute=post`}
+                        >
+                        <a className="linkFix"><h2>{post.title.rendered}</h2></a></Link>
                         <div>{post.featued_media}</div>
                         <div
                             dangerouslySetInnerHTML={{
@@ -48,11 +52,17 @@ class Blog extends Component {
             return (
                 <Layout>
                     <Menu menu={this.props.headerMenu} />
-                    <div>
-                        <h1>Posts</h1>
-                        <ul>{posts}</ul>
+                    <div className="padTop white">
+                        <div className=" flex wrapper oneSeoGradient">
+                            <div className="flex flexThree column">
+                                <h1>Posts</h1>
+                                <ul>{posts}</ul>
+                            </div>
+                            <div className="flex flexOne column sidePadTop">
+                                <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpw8" frameborder="0"></iframe>
+                            </div>
+                        </div>
                     </div>
-                    {/* <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpcl" frameborder="0"></iframe> */}
                 </Layout>
             )
         };
@@ -60,12 +70,21 @@ class Blog extends Component {
         return (
             <Layout>
                 <Menu menu={this.props.headerMenu} />
+                <div className="padTop white">
+                        <div className=" flex wrapper oneSeoGradient">
+                            <div className="flex flexThree column">
                 <h1>{this.props.post.title.rendered}</h1>
                 <div
                     dangerouslySetInnerHTML={{
                         __html: this.props.post.content.rendered
                     }}
                 />
+                </div>
+                            <div className="flex flexOne column sidePadTop">
+                                <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpw8" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
             </Layout>
         );
     }

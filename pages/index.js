@@ -43,11 +43,19 @@ class Index extends Component {
         };
 
         var numberOne = document.getElementById('imageOne');
+        var numberTwo = document.getElementById('imageTwo');
         window.addEventListener('scroll', function (event) {
             if (isInViewport(numberOne)) {
                 numberOne.classList.add("animated");
                 numberOne.classList.add("flex");
                 numberOne.classList.add("slideInRight");
+            }
+        }, false);
+        window.addEventListener('scroll', function (event) {
+            if (isInViewport(numberTwo)) {
+                numberTwo.classList.add("animated");
+                numberTwo.classList.add("flex");
+                numberTwo.classList.add("slideInLeft");
             }
         }, false);
     }
@@ -133,7 +141,7 @@ class Index extends Component {
                         </div>
                         <div className="flex column">
                             <h3>{section_two.development.dev_headline}</h3>
-                            <img className="divideRight" src="/static/images/divideRed.png" />
+                            <img id="imageTwo" className="none" className="divideRight" src="/static/images/divideRed.png" />
                             <p>{section_two.development.dev_paragraph}</p>
                             <div className="center"><a id="three" href="#numberFour"><img id="downButton" className="downButton" src="/static/images/downArrow.png" width="60" /></a></div>
                         </div>
