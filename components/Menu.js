@@ -26,10 +26,10 @@ class Menu extends Component {
             );
         }
         const slug = this.getSlug(item.url);
-        const actualPage = item.object === "category" ? "category" : "post";
+        const actualPage = item.object === "category" ? "category" : "page";
         return (
             <Link
-                as={`/${item.object}/${slug}`}
+                as={`/${actualPage}/${slug}`}
                 href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
                 key={item.ID}
             >
@@ -40,11 +40,15 @@ class Menu extends Component {
 
 
     return(
-      <div>
-          <Link href="/">
-              <a style={linkStyle}>Home</a>
-          </Link>
-          {menuItems}
+      <div id="homeNav" className="mainNav flex">
+        <Link href="/">
+            <a><img 
+                src="/static/images/logo.png"
+                width="150px"
+                className="logo"
+            /></a>
+        </Link> 
+        {menuItems}
       </div>
     )
   }
