@@ -37,7 +37,7 @@ class Subscribe extends React.Component {
 
 render() {
     return (
-      <Layout>
+
       <div style={{ padding: '10px 45px' }}>
         <Head>
           <title>Subscribe</title>
@@ -60,7 +60,7 @@ render() {
           </Button>
         </form>
       </div>
-      </Layout>
+
     );
   }
 }

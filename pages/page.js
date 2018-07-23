@@ -26,8 +26,22 @@ class Page extends Component {
         if (!this.props.page.title){
             return(
                 <Error statusCode={404} />
-            )
+            );
+        };
 
+        if (title.rendered = 'Contact Us'){
+            return(
+            <Layout>
+                <Menu menu={this.props.headerMenu} />
+                <h1>{title.rendered}</h1>
+                <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpcl" frameborder="0"></iframe>
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: content.rendered
+                    }}
+                />
+            </Layout>
+            );
         };
 
         return (
