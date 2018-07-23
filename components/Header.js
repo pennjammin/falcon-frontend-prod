@@ -27,6 +27,8 @@ class Header extends Component {
                     </title>
                 </Head>
                 <Intercom appID="vmn0i5pf"/>
+                <Link href="tel:215-946-1046">
+        <a className="contactButton flex spaceAround alignItems"><i className="fa fa-phone"></i><p className="marginZero">Call Now: 215-946-1046</p></a></Link>
             </div>
         );
     }

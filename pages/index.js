@@ -17,8 +17,6 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        const menuChange = document.getElementById('homeNav');
-        menuChange.classList.add('absolute');
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -34,25 +32,6 @@ class Index extends Component {
             });
         });
 
-        window.onscroll = function() {headShrinker()};
-
-        function headShrinker() {
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                var y = document.getElementById("homeNav");
-                y.classList.remove("absolute");
-                y.classList.add("sticky");
-                var z = document.getElementById("logo");
-                z.classList.remove("logo");
-                z.classList.add("miniLogo");
-            } else {
-                var y = document.getElementById("homeNav");
-                y.classList.remove("sticky");
-                y.classList.add("absolute");
-                var z = document.getElementById("logo");
-                z.classList.add("logo");
-                z.classList.remove("miniLogo");
-            }
-        }
         var isInViewport = function (elem) {
             var bounding = elem.getBoundingClientRect();
             return (
@@ -168,7 +147,7 @@ class Index extends Component {
                             <p>{section_two.managed_it_services.it_paragraph}</p>
                         </div>
                         <div className="flex">
-                            <img src={section_two.managed_it_services.it_svg} width="500" />
+                            <img src={section_two.managed_it_services.it_svg} height="500" />
                         </div>
                     </div>
                 </div>
@@ -188,7 +167,7 @@ class Index extends Component {
                             __html: section_four.s_four_paragraph
                             }}
                             />
-                            <img className="flexOne" src={section_four.s_four_image} width="500" alt=""/>
+                            <img  className="flexOne maxHeight" src={section_four.s_four_image} width="500" alt=""/>
                         </div>
                         <a className="standardButton" href={section_four.s_four_button.button_link}>{section_four.s_four_button.button_text}</a>
                     </div>

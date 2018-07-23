@@ -11,6 +11,38 @@ class Menu extends Component {
       super();
   }
 
+  componentDidMount() {
+
+    const menuChange = document.getElementById('homeNav');
+    menuChange.classList.add('absolute');
+
+    window.onscroll = function() {headShrinker()};
+
+    function headShrinker() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            var y = document.getElementById("homeNav");
+            y.classList.remove("absolute");
+            y.classList.add("sticky");
+            var z = document.getElementById("logo");
+            z.classList.remove("logo");
+            z.classList.add("miniLogo");
+            var t = document.getElementById("hidden");
+            t.classList.remove("none");
+            t.classList.add("flex");
+        } else {
+            var y = document.getElementById("homeNav");
+            y.classList.remove("sticky");
+            y.classList.add("absolute");
+            var z = document.getElementById("logo");
+            z.classList.add("logo");
+            z.classList.remove("miniLogo");
+            var t = document.getElementById("hidden");
+            t.classList.add("none");
+            t.classList.remove("flex");
+        }
+    }
+  }
+
   getSlug(url) {
       const parts = url.split("/");
       return parts.length > 2 ? parts[parts.length - 2] : "";
@@ -54,7 +86,12 @@ class Menu extends Component {
             style={linkStyle}
             href="/blog">
             <a>Blog</a>
-        </Link> 
+        </Link>
+        <Link href="tel:215-946-1046">
+        <a>
+        <i id="hidden" className="fa fa-phone thirtyP none"></i>
+        </a>
+        </Link>
       </div>
     )
   }

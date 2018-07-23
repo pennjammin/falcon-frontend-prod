@@ -90,7 +90,7 @@ app
 
         server.listen(3000, err => {
             if (err) throw err;
-            console.log("> Penn is a homo at http://localhost:3000");
+            console.log("> The Falcon is live at http://localhost:3000");
         });
     })
     .catch(ex => {

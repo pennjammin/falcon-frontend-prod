@@ -19,6 +19,14 @@ body {
   font-size: 18px;
 }
 
+.thirtyP {
+  font-size: 30px;
+}
+
+.marginZero {
+  margin: 0;
+}
+
 .flex {
   display: flex!important;
 }
@@ -33,6 +41,10 @@ body {
 
 .flexThree {
   flex: 3;
+}
+
+.maxHeight {
+  max-height: 450px;
 }
 
 .alignItems {
@@ -78,6 +90,19 @@ body {
 
 .none {
   display: none;
+}
+
+.contactButton {
+  position: absolute;
+  top: 2%;
+  z-index: 9999;
+  display: flex;
+  right: 20%;
+  text-decoration: none;
+  color: #fff;
+  background-color: #223c74;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .oneSeoGradient {
