@@ -1,7 +1,13 @@
 import Link from "next/link";
+import Subscribe from "./Subscribe.js";
+
 
 const Footer = () => (
     <div>
+        <h2>GET IN TOUCH</h2>
+        <a href="tel:215-946-1046">215-946-1046</a>
+        <a href="https://goo.gl/NGFRTc" target="_blank"><i class="glyphicon glyphicon-map-marker kl-icon-white"></i> Open in Google Maps</a>
+        <Subscribe></Subscribe>
     </div>
 );
 

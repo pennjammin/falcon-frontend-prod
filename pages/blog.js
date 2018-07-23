@@ -6,7 +6,6 @@ import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 import Link from "next/link";
-import Subscribe from "../components/Subscribe.js";
 
 
 class Blog extends Component {
@@ -25,7 +24,10 @@ class Blog extends Component {
         return { post, posts };
     }
 
+
     render() {
+
+
         const posts = this.props.posts.map((post, index) => {
             return (
                 <ul key={index}>
@@ -51,7 +53,6 @@ class Blog extends Component {
                         <ul>{posts}</ul>
                     </div>
                     {/* <iframe src="https://go.1seo.com/l/367991/2018-07-20/3mpcl" frameborder="0"></iframe> */}
-                    <Subscribe></Subscribe>
                 </Layout>
             )
         };
