@@ -53,7 +53,26 @@ class Index extends Component {
                 z.classList.remove("miniLogo");
             }
         }
+        var isInViewport = function (elem) {
+            var bounding = elem.getBoundingClientRect();
+            return (
+                bounding.top >= 0 &&
+                bounding.left >= 0 &&
+                bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+
+        var numberOne = document.getElementById('imageOne');
+        window.addEventListener('scroll', function (event) {
+            if (isInViewport(numberOne)) {
+                numberOne.classList.add("animated");
+                numberOne.classList.add("flex");
+                numberOne.classList.add("slideInRight");
+            }
+        }, false);
     }
+    
 
     render() {
 
@@ -113,20 +132,22 @@ class Index extends Component {
                 <Menu menu={this.props.headerMenu} />
                 <div className="heroGhost"></div>
                 <div className="flex partnerSection">{imageRepeaterOne}</div>
-                <div id="numberTwo" className="sectionTwo twoBlue">
-                    <div className="wrapper flex">
-                        <div className="flex column">
-                            <h3>{section_two.digital_marketing.dm_headline}</h3>
-                            <img className="divideLeft" src="/static/images/divideRed.png" />
-                            <p>{section_two.digital_marketing.dm_paragraph}</p>
-                        </div>
-                        <div className="flex">
-                            <img src={section_two.digital_marketing.dm_svg} />
-                        </div>
-                        <div><a id="two" href="#numberThree">Down</a></div>
+                <div id="numberTwo" data-section="1" className="sectionTwo twoBlue">
+                    <div className="wrapper flex column">
+                            <div className="flex">
+                                <div className="flex column">
+                                    <h3>{section_two.digital_marketing.dm_headline}</h3>
+                                    <img className="divideLeft" src="/static/images/divideRed.png" />
+                                    <p>{section_two.digital_marketing.dm_paragraph}</p>
+                                </div>
+                                <div className="flex">
+                                    <img id="imageOne" className="none" src={section_two.digital_marketing.dm_svg} />
+                                </div>
+                            </div>
+                        <div className="center"><a id="three" href="#numberThree"><img id="downButton" className="downButton" src="/static/images/downArrowTwo.png" width="60" /></a></div>
                     </div>
                 </div>
-                <div id="numberThree" className="sectionTwo">
+                <div id="numberThree" data-section="2" className="sectionTwo">
                     <div className="wrapper flex">
                         <div className="flex">
                             <img src={section_two.development.dev_svg} />
@@ -135,18 +156,19 @@ class Index extends Component {
                             <h3>{section_two.development.dev_headline}</h3>
                             <img className="divideRight" src="/static/images/divideRed.png" />
                             <p>{section_two.development.dev_paragraph}</p>
+                            <div className="center"><a id="three" href="#numberFour"><img id="downButton" className="downButton" src="/static/images/downArrow.png" width="60" /></a></div>
                         </div>
                     </div>
                 </div>
-                <div className="sectionTwo twoBlue">
-                    <div className="wrapper flex">
+                <div id="numberFour" data-section="3" className="sectionTwo twoBlue">
+                    <div className="wrapper flex alignItems">
                         <div className="flex column">
                             <h3>{section_two.managed_it_services.it_headline}</h3>
                             <img className="divideLeft" src="/static/images/divideRed.png" />
                             <p>{section_two.managed_it_services.it_paragraph}</p>
                         </div>
                         <div className="flex">
-                            <img src={section_two.managed_it_services.it_svg} />
+                            <img src={section_two.managed_it_services.it_svg} width="500" />
                         </div>
                     </div>
                 </div>
@@ -157,21 +179,50 @@ class Index extends Component {
                         <a className="standardButton" href={section_three.button_two.button_two_link}>{section_three.button_two.button_two_text}</a>
                     </div>
                 </div>
-                <div className="flex column sectionFour">
+                <div className="flex section oneSeoGradient">
                     <div className="wrapper">
-                        <h3>{section_four.s_four_headline}</h3>
-                        <p>{section_four.s_four_paragraph}</p>
-                        <img src={section_four.s_four_image} alt=""/>
+                        <h3 className="white">{section_four.s_four_headline}</h3>
+                        <div className="flex">
+                        <div className="flexTwo bigP white"
+                            dangerouslySetInnerHTML={{
+                            __html: section_four.s_four_paragraph
+                            }}
+                            />
+                            <img className="flexOne" src={section_four.s_four_image} width="500" alt=""/>
+                        </div>
                         <a className="standardButton" href={section_four.s_four_button.button_link}>{section_four.s_four_button.button_text}</a>
                     </div>
                 </div>
-                <img src={section_five.image} alt=""/>
-                <div>{section_five.headline}</div>
-                <div>{section_five.paragraph}</div>
-                <div>{section_six.headline}</div>
-                <div>{section_six.sub_headline}</div>
-                <div>{imageRepeaterTwo}</div>
-                <a href={section_six.button.button_link}>{section_six.button.button_text}</a>
+                <div className="sectionSmallest">
+                    <div className="wrapper flex">
+                        <div className="flex flexThree">
+                            <img className="twntyMargin" src={section_five.image} alt="" />
+                        </div>
+                        <div className="flex column twntyMargin flexTwo">
+                            <h3 className="medHead">{section_five.headline}</h3>
+                            <p className="bigP">{section_five.paragraph}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="sectionSmall oneSeoGradient">
+                    <div className="wrapper flex column">
+                        <div className="flex alignItems spaceAround">
+                            <div className="flex column">
+                                <div 
+                                    className="bigHead white"
+                                    dangerouslySetInnerHTML={{
+                                    __html:section_six.headline
+                                     }} 
+                                     />
+                                <h4 className="medHead white marginBottom">{section_six.sub_headline}</h4>
+                            </div>
+                            <a className="standardButton" href={section_six.button.button_link}>{section_six.button.button_text}</a>
+                        </div>
+                        <div className="flex spaceAround">
+                            {imageRepeaterTwo}
+                        </div>
+                    </div>
+                </div>
             </Layout>
         );
     }

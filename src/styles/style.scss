@@ -5,6 +5,8 @@ $theme-font: 100% 'Open-sans', sans-serif;
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css');
+
 body {
   font: $theme-font;
   background-color: $themeColor-Light;
@@ -13,8 +15,32 @@ body {
   overflow-x: hidden;
 }
 
+.bigP {
+  font-size: 18px;
+}
+
 .flex {
-  display: flex;
+  display: flex!important;
+}
+
+.flexOne {
+  flex: 1;
+}
+
+.flexTwo {
+  flex: 2;
+}
+
+.flexThree {
+  flex: 3;
+}
+
+.alignItems {
+  align-items: center;
+}
+
+.spaceAround {
+  justify-content: space-around;
 }
 
 .column {
@@ -23,6 +49,61 @@ body {
 
 .wrapper {
   padding: 50px;
+}
+
+.section {
+  height: 100vh;
+  width: 100vw;
+}
+
+.sectionSmall {
+  padding: 20px;
+}
+
+.sectionSmallest {
+  padding: 0px;
+}
+
+.twntyMargin{
+  margin: 20px;
+}
+
+.bigHead {
+  font-size: 50px;
+}
+
+.medHead {
+  font-size: 24px;
+}
+
+.none {
+  display: none;
+}
+
+.oneSeoGradient {
+  background-image: linear-gradient(to left,#242430,#223c74);
+}
+
+.textHigh {
+    font-size: 72px;
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.white {
+  color: rgb(255,255,255);
+}
+
+.marginBottom {
+  margin:0;
+  margin-bottom: 10%;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .logo {
@@ -56,6 +137,7 @@ body {
   color: white;
   margin: 10px;
   background-color: #c4272f;
+  max-height: 30px;
 }
 .standardButton:hover {
   background-color: rgba(190, 15, 15, 0.8)!important;
@@ -209,7 +291,7 @@ body {
 }
 
 .twoBlue {
-  background-image: linear-gradient(bottom left,#242430,#223c74);
+  background-image: linear-gradient(to left,#242430,#223c74);
   text-align: left;
   h3 {
     color: white;
@@ -234,6 +316,7 @@ body {
 }
 
 .sectionThree {
+  padding: 10px;
   align-items: center;
   h3 {
     font-size: 60px;
