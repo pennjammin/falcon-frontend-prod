@@ -26,6 +26,7 @@ class Blog extends Component {
     render() {
         const posts = this.props.posts.map((post, index) => {
             return (
+                <ul key={index}>
                     <li>
                         <h2>{post.title.rendered}</h2>
                         <div>{post.featued_media}</div>
@@ -35,6 +36,7 @@ class Blog extends Component {
                         }}
                 />
                     </li>
+                </ul>
             );
             });
 
@@ -43,8 +45,8 @@ class Blog extends Component {
                 <Layout>
                     <Menu menu={this.props.headerMenu} />
                     <div>
-                    <h1>Posts</h1>
-                    <ul>{posts}</ul>
+                    <h1>Blog</h1>
+                    {posts}
                     </div>
                 </Layout>
             )

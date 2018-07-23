@@ -40,7 +40,7 @@ app
 
         server.listen(3000, err => {
             if (err) throw err;
-            console.log("> Ready on http://localhost:3000");
+            console.log("> Penn is a homo at http://localhost:3000");
         });
     })
     .catch(ex => {

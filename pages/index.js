@@ -18,6 +18,40 @@ class Index extends Component {
     componentDidMount() {
         const menuChange = document.getElementById('homeNav');
         menuChange.classList.add('absolute');
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const f = document.getElementById("downButton");
+                f.classList.remove("bouncer");
+                f.classList.add("bouncer");
+                setTimeout(() => {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }, 1000)
+            });
+        });
+
+        window.onscroll = function() {headShrinker()};
+
+        function headShrinker() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                var y = document.getElementById("homeNav");
+                y.classList.remove("absolute");
+                y.classList.add("sticky");
+                var z = document.getElementById("logo");
+                z.classList.remove("logo");
+                z.classList.add("miniLogo");
+            } else {
+                var y = document.getElementById("homeNav");
+                y.classList.remove("sticky");
+                y.classList.add("absolute");
+                var z = document.getElementById("logo");
+                z.classList.add("logo");
+                z.classList.remove("miniLogo");
+            }
+        }
     }
 
     render() {
@@ -57,7 +91,7 @@ class Index extends Component {
          
         return (
             <Layout>
-                <video  autoPlay muted loop id="heroVideo">
+                <video autoPlay muted loop id="heroVideo">
                     <source 
                             src={hero_section.hero_video_background}
                             type="video/mp4" 
@@ -73,34 +107,63 @@ class Index extends Component {
                     <Link href="#"><a className="homeButton flex"><img src="/static/images/statistics.png" width="30" /><h3>Learn More</h3></a></Link>
                     <Link href="#"><a className="homeButton flex"><img src="/static/images/list.png" width="30" /><h3>Free Evaluation</h3></a></Link>
                     </div>
+                    <div><a id="two" href="#numberTwo"><img id="downButton" className="downButton" src="/static/images/downArrow.png" width="60" /></a></div>
                 </div>
                 <Menu menu={this.props.headerMenu} />
                 <div className="heroGhost"></div>
                 <div className="flex partnerSection">{imageRepeaterOne}</div>
-                <div className="sectionTwo">
+                <div id="numberTwo" className="sectionTwo twoBlue">
                     <div className="wrapper flex">
                         <div className="flex column">
                             <h3>{section_two.digital_marketing.dm_headline}</h3>
+                            <img className="divideLeft" src="/static/images/divideRed.png" />
                             <p>{section_two.digital_marketing.dm_paragraph}</p>
                         </div>
                         <div className="flex">
                             <img src={section_two.digital_marketing.dm_svg} />
                         </div>
+                        <div><a id="two" href="#numberThree">Down</a></div>
                     </div>
                 </div>
-                <div>{section_two.development.dev_headline}</div>
-                <div>{section_two.development.dev_paragraph}</div>
-                <img src={section_two.development.dev_svg} />
-                <div>{section_two.managed_it_services.it_headline}</div>
-                <div>{section_two.managed_it_services.it_paragraph}</div>
-                <img src={section_two.managed_it_services.it_svg} />
-                <div>{section_three.section_three_headline}</div>
-                <a href={section_three.button_one.button_one_link}>{section_three.button_one.button_one_text}</a>
-                <br/><a href={section_three.button_two.button_two_link}>{section_three.button_two.button_two_text}</a>
-                <div>{section_four.s_four_headline}</div>
-                <div>{section_four.s_four_paragraph}</div>
-                <img src={section_four.s_four_image} alt=""/>
-                <a href={section_four.s_four_button.button_link}>{section_four.s_four_button.button_text}</a>
+                <div id="numberThree" className="sectionTwo">
+                    <div className="wrapper flex">
+                        <div className="flex">
+                            <img src={section_two.development.dev_svg} />
+                        </div>
+                        <div className="flex column">
+                            <h3>{section_two.development.dev_headline}</h3>
+                            <img className="divideRight" src="/static/images/divideRed.png" />
+                            <p>{section_two.development.dev_paragraph}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="sectionTwo twoBlue">
+                    <div className="wrapper flex">
+                        <div className="flex column">
+                            <h3>{section_two.managed_it_services.it_headline}</h3>
+                            <img className="divideLeft" src="/static/images/divideRed.png" />
+                            <p>{section_two.managed_it_services.it_paragraph}</p>
+                        </div>
+                        <div className="flex">
+                            <img src={section_two.managed_it_services.it_svg} />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex column sectionThree">
+                    <h3>{section_three.section_three_headline}</h3>
+                    <div className="flex">
+                        <a className="standardButton" href={section_three.button_one.button_one_link}>{section_three.button_one.button_one_text}</a>
+                        <a className="standardButton" href={section_three.button_two.button_two_link}>{section_three.button_two.button_two_text}</a>
+                    </div>
+                </div>
+                <div className="flex column sectionFour">
+                    <div className="wrapper">
+                        <h3>{section_four.s_four_headline}</h3>
+                        <p>{section_four.s_four_paragraph}</p>
+                        <img src={section_four.s_four_image} alt=""/>
+                        <a className="standardButton" href={section_four.s_four_button.button_link}>{section_four.s_four_button.button_text}</a>
+                    </div>
+                </div>
                 <img src={section_five.image} alt=""/>
                 <div>{section_five.headline}</div>
                 <div>{section_five.paragraph}</div>
