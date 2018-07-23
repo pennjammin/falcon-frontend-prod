@@ -17,6 +17,7 @@ const PageWrapper = Comp => (
     render() {
       return (
         <Comp {...this.props} />
+
       )
     }
   }

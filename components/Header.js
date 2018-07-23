@@ -4,6 +4,7 @@ import Head from "next/head";
 import Menu from "./Menu.js";
 import { Config } from "../config.js";
 import stylesheet from '../src/styles/style.scss'
+import Intercom from 'react-intercom';
 
 class Header extends Component {
     constructor() {
@@ -25,6 +26,7 @@ class Header extends Component {
                         WordPress + React Starter Kit Frontend by Postlight
                     </title>
                 </Head>
+                <Intercom appID="vmn0i5pf"/>
             </div>
         );
     }
