@@ -45,8 +45,7 @@ class Blog extends Component {
                 <Layout>
                     <Menu menu={this.props.headerMenu} />
                     <div>
-                    <h1>Blog</h1>
-                    {posts}
+                
                     </div>
                 </Layout>
             )
