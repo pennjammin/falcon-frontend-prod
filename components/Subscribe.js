@@ -39,10 +39,6 @@ render() {
     return (
 
       <div style={{ padding: '10px 45px' }}>
-        <Head>
-          <title>Subscribe</title>
-          <meta name="description" content="description for indexing bots" />
-        </Head>
         <br />
         <form onSubmit={this.onSubmit}>
           <p>Get the latest scoop on all things tech:</p>
