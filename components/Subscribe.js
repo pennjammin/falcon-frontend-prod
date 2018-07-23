@@ -48,6 +48,7 @@ render() {
             }}
             type="email"
             label="Your email"
+            className="white"
             required
           />
           <p />
