@@ -83,7 +83,6 @@ class Menu extends Component {
         </Link> 
         {menuItems}
         <Link
-            style={linkStyle}
             href="/blog">
             <a>Blog</a>
         </Link>
