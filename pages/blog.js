@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
 import Link from "next/link";
-
+import PageInsight from "../components/PageInsight.js"
 
 class Blog extends Component {
     static async getInitialProps(context) {
@@ -63,6 +63,7 @@ class Blog extends Component {
                             </div>
                         </div>
                     </div>
+                    <PageInsight></PageInsight>
                 </Layout>
             )
         };
