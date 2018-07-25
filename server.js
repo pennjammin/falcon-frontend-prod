@@ -66,10 +66,18 @@ app
             app.render(req, res, actualPage, queryParams);
         });
 
-        server.get("/page/:slug", (req, res) => {
+        
+        server.get("/:slug", (req, res) => {
             const actualPage = "/page";
             const queryParams = { slug: req.params.slug, apiRoute: "page" };
-            app.render(req, res, actualPage, queryParams);
+            const actualPageBlog = "/blog";
+            const queryParamsBlog = { slug: req.params.slug, apiRoute: "post" };
+            if(req.params.slug === "blog") {
+              app.render(req, res, actualPageBlog, queryParamsBlog);
+            }
+            else {
+              app.render(req, res, actualPage, queryParams);
+            }
         });
 
         server.get("/category/:slug", (req, res) => {
