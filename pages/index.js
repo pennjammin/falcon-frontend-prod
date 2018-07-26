@@ -5,6 +5,8 @@ import Link from "next/link";
 import PageWrapper from "../components/PageWrapper.js";
 import Menu from "../components/Menu.js";
 import { Config } from "../config.js";
+import styled from 'styled-components';
+import Hero from "../components/Layout/Hero.js";
 
 class Index extends Component {
 
@@ -119,6 +121,7 @@ class Index extends Component {
                 <Menu menu={this.props.headerMenu} />
                 <div className="heroGhost"></div>
                 <div className="flex partnerSection">{imageRepeaterOne}</div>
+                <Hero/>
                 <div id="numberTwo" data-section="1" className="sectionTwo twoBlue">
                     <div className="wrapper flex column">
                             <div className="flex">

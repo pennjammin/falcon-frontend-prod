@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "build": "next build",
-        "start": "node server.js",
+        "start": "next start -p 8000",
         "docker:build": "docker build -t frontend .",
         "docker:clean": "docker rm -f frontend || true",
         "docker:run": "docker run -p 3000:3000 --name frontend frontend",
@@ -27,7 +27,8 @@
         "react": "^16.0.0",
         "react-intercom": "^1.0.14",
         "react-svg": "^4.1.8",
-        "request": "^2.87.0"
+        "request": "^2.87.0",
+        "styled-components": "^3.3.3"
     },
     "devDependencies": {
         "autoprefixer": "9.0.0",
@@ -41,6 +42,7 @@
         "raw-loader": "^0.5.1",
         "react-dom": "^16.2.0",
         "sass-loader": "^7.0.3",
+        "babel-plugin-styled-components": "^1.1.5",
         "webpack": "^4.16.1"
     }
 }
