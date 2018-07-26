@@ -1,1 +1,1 @@
-export const Config = {apiUrl: 'https://digitalreactor.co', rootUrl: 'http://localhost:3000'}
+export const Config = {apiUrl: 'http://localhost:8888', rootUrl: 'http://localhost:3000'}
