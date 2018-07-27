@@ -4,11 +4,15 @@ import Head from "next/head";
 import Menu from "./Menu.js";
 import { Config } from "../config.js";
 import stylesheet from '../src/styles/style.scss'
-import Intercom from 'react-intercom';
+import Intercom, { IntercomAPI } from 'react-intercom';
 
 class Header extends Component {
     constructor() {
         super();
+    }
+
+    componentDidMount() {
+        if (!window.Intercom) { window.Intercom('update'); }
     }
 
     render() {
