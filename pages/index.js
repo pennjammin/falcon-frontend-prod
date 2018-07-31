@@ -98,6 +98,7 @@ class Index extends Component {
          
         return (
             <Layout>
+                <p>Hi Teague!</p>
                 <video autoPlay muted loop id="heroVideo">
                     <source 
                             src={hero_section.hero_video_background}
